@@ -71,7 +71,6 @@ This package provides the Haskell %{name} library development files.
 %install
 %ghc_lib_install
 %ghc_fix_rpath %{pkgver}
-mv %{buildroot}%{_ghclicensedir}/{,ghc-}%{name}
 
 
 %post -n ghc-%{name}-devel
