@@ -4,4 +4,8 @@ This package requires the following packages from [bdcs-copr](https://github.com
 
 * [ghc-tls](https://github.com/weldr/bdcs-copr/tree/master/ghc-tls)
 
+In addition, this package requires the following packages not available in Fedora:
+
+* [ghc-psqueues-weldr](../ghc-psqueues-weldr)
+
 ![ghc-tls-session-manager status](https://copr.fedorainfracloud.org/coprs/dshea/bdcs-haskell-deps/package/ghc-tls-session-manager/status_image/last_build.png)
