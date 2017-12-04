@@ -17,7 +17,7 @@ BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
 # Begin cabal-rpm deps:
 BuildRequires:  chrpath
-BuildRequires:  ghc-aeson-devel
+BuildRequires:  ghc-aeson-devel >= 1.1.2.0
 BuildRequires:  ghc-ansi-terminal-devel
 BuildRequires:  ghc-bytestring-devel
 BuildRequires:  ghc-cmdargs-devel
