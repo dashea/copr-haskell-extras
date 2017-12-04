@@ -9,6 +9,7 @@ This package requires the following packages from [bdcs-copr](https://github.com
 Additionally, the following packages are required:
 
 * [ghc-process-extras](../ghc-process-extras)
+* [ghc-storable-tuple](../ghc-storable-tuple)
 * [ghc-warp-tls](../ghc-warp-tls)
 
 ![hoogle status](https://copr.fedorainfracloud.org/coprs/dshea/bdcs-haskell-deps/package/hoogle/status_image/last_build.png)
