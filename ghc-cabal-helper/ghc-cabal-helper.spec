@@ -4,7 +4,7 @@
 %global pkg_name cabal-helper
 %global pkgver %{pkg_name}-%{version}
 
-%bcond_without tests
+%bcond_with tests
 
 Name:           ghc-%{pkg_name}
 Version:        0.7.3.0
@@ -98,11 +98,11 @@ This package provides the Haskell %{pkg_name} library development files.
 
 %files -f %{name}.files
 %license LICENSE
+%{_libexecdir}/%{_host_cpu}-%{_host_os}-ghc-%{ghc_version}/%{pkgver}/cabal-helper-wrapper
 
 
 %files devel -f %{name}-devel.files
 %doc README.md
-%{_bindir}/cabal-helper-wrapper
 
 
 %changelog
