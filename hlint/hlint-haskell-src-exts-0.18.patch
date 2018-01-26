@@ -1,0 +1,69 @@
+commit 21ba27c14b5530f07e1aac9c9c318389baba57cb
+Author: David Shea <dshea@redhat.com>
+Date:   Fri Jan 26 10:45:19 2018 -0500
+
+    Use haskell-src-exts-1.18.
+    
+    This keeps things compatible with the packages currently available in
+    Fedora.
+    
+    The only new thing used by hlint from haskell-src-exts-1.20 is the new
+    UnboxedSums extension, which is available in ghc >= 8.2.1. We're still
+    on ghc 8.0.2, so just remove the check for the extension.
+    
+    The other changes are to remove unused new constructor parameters in
+    Language.Haskell.Exts.Syntax.Deriving and DerivDecl, related to
+    DerivingStrategies, also available in ghc >= 8.2.1.
+
+diff --git a/hlint.cabal b/hlint.cabal
+index 3383fba..275950d 100644
+--- a/hlint.cabal
++++ b/hlint.cabal
+@@ -51,7 +51,7 @@ library
+         transformers, data-default,
+         cpphs >= 1.20.1,
+         cmdargs >= 0.10,
+-        haskell-src-exts >= 1.20 && < 1.21,
++        haskell-src-exts >= 1.18 && < 1.20,
+         haskell-src-exts-util >= 0.2.1.2,
+         uniplate >= 1.5,
+         ansi-terminal >= 0.6.2,
+diff --git a/src/HSE/Util.hs b/src/HSE/Util.hs
+index 8f1dfdc..5deb4ff 100644
+--- a/src/HSE/Util.hs
++++ b/src/HSE/Util.hs
+@@ -83,7 +83,7 @@ fromTyBang (TyBang _ _ _ x) = x
+ fromTyBang x = x
+ 
+ fromDeriving :: Deriving s -> [InstRule s]
+-fromDeriving (Deriving _ _ x) = x
++fromDeriving (Deriving _ x) = x
+ 
+ -- is* :: Exp_ -> Bool
+ -- is* :: Decl_ -> Bool
+diff --git a/src/Hint/Extensions.hs b/src/Hint/Extensions.hs
+index 82cfdee..ac8d76e 100644
+--- a/src/Hint/Extensions.hs
++++ b/src/Hint/Extensions.hs
+@@ -266,7 +266,7 @@ derives m = mconcat $ map decl (childrenBi m) ++ map idecl (childrenBi m)
+         decl (GDataDecl _ dn _ _ _ _ ds) = g dn ds
+         decl (DataInsDecl _ dn _ _ ds) = g dn ds
+         decl (GDataInsDecl _ dn _ _ _ ds) = g dn ds
+-        decl (DerivDecl _ _ _ hd) = mempty{derivesStandalone=[ir hd]}
++        decl (DerivDecl _ _ hd) = mempty{derivesStandalone=[ir hd]}
+         decl _ = mempty
+ 
+         g dn ds = if isNewType dn then mempty{derivesNewType=xs} else mempty{derivesData=xs}
+diff --git a/src/Util.hs b/src/Util.hs
+index f4d728f..f9438d7 100644
+--- a/src/Util.hs
++++ b/src/Util.hs
+@@ -64,7 +64,7 @@ badExtensions =
+     [Arrows -- steals proc
+     ,TransformListComp -- steals the group keyword
+     ,XmlSyntax, RegularPatterns -- steals a-b
+-    ,UnboxedTuples, UnboxedSums -- breaks (#) lens operator
++    ,UnboxedTuples -- breaks (#) lens operator
+     ,QuasiQuotes -- breaks [x| ...], making whitespace free list comps break
+     ,DoRec, RecursiveDo -- breaks rec
+     ,TypeApplications -- HSE fails on @ patterns
