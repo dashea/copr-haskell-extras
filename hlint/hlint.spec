@@ -42,6 +42,8 @@ BuildRequires:  ghc-vector-devel
 BuildRequires:  ghc-yaml-devel
 # End cabal-rpm deps
 
+BuildRequires:  /usr/bin/git
+
 %description
 HLint gives suggestions on how to improve your source code.
 
