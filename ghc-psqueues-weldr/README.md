@@ -3,4 +3,4 @@ so that it doesn't interfere with the version of psqueues available in Fedora.
 
 This package does not require anything not available in Fedora.
 
-![ghc-psqueues-weldr status](https://copr.fedorainfracloud.org/coprs/dshea/bdcs-haskell-deps/package/ghc-psqueues-weldr/status_image/last_build.png)
+![ghc-psqueues-weldr status](https://copr.fedorainfracloud.org/coprs/dshea/haskell-extras/package/ghc-psqueues-weldr/status_image/last_build.png)

@@ -11,4 +11,4 @@ Additionally, the following packages required:
 
 * [ghc-tls-session-manager](../ghc-tls-session-manager)
 
-![ghc-warp-tls status](https://copr.fedorainfracloud.org/coprs/dshea/bdcs-haskell-deps/package/ghc-warp-tls/status_image/last_build.png)
+![ghc-warp-tls status](https://copr.fedorainfracloud.org/coprs/dshea/haskell-extras/package/ghc-warp-tls/status_image/last_build.png)

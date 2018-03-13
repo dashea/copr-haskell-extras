@@ -12,4 +12,4 @@ Additionally, the following packages are required:
 * [ghc-storable-tuple](../ghc-storable-tuple)
 * [ghc-warp-tls](../ghc-warp-tls)
 
-![hoogle status](https://copr.fedorainfracloud.org/coprs/dshea/bdcs-haskell-deps/package/hoogle/status_image/last_build.png)
+![hoogle status](https://copr.fedorainfracloud.org/coprs/dshea/haskell-extras/package/hoogle/status_image/last_build.png)

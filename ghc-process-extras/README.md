@@ -6,4 +6,4 @@ This package requires the following packages not available in Fedora:
 
 * [ghc-ListLike](../ghc-ListLike)
 
-![ghc-process-extras status](https://copr.fedorainfracloud.org/coprs/dshea/bdcs-haskell-deps/package/ghc-process-extras/status_image/last_build.png)
+![ghc-process-extras status](https://copr.fedorainfracloud.org/coprs/dshea/haskell-extras/package/ghc-process-extras/status_image/last_build.png)
