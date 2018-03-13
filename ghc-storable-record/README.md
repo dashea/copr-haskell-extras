@@ -1,6 +1,6 @@
 Elegant definition of Storable instances for records
 
-This package requires the following packages not available in Fedora:
+Fedora 27 requires:
 
 * [ghc-utility-ht](../ghc-utility-ht)
 
