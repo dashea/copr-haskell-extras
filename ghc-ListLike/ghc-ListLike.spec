@@ -4,7 +4,7 @@
 %global pkg_name ListLike
 %global pkgver %{pkg_name}-%{version}
 
-%bcond_without tests
+%bcond_with tests
 
 Name:           ghc-%{pkg_name}
 Version:        4.6
